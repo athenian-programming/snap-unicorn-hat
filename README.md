@@ -1,13 +1,18 @@
-# Snap Unicorn Hat Gateway
+# Snap Unicorn Hat Server
 
-The Snap Unicorn Hat Gateway allows [Snap](http://snap.berkeley.edu) programs to manipulate
-a [Unicorn Hat](https://shop.pimoroni.com/products/unicorn-hat).
+The Snap Unicorn HAT Server allows [Snap](http://snap.berkeley.edu) programs to manipulate
+a [Unicorn HAT](https://shop.pimoroni.com/products/unicorn-hat).
+
+The snap blocks roughly match the [Unicorn HAT API](http://docs.pimoroni.com/unicornhat/).
+ 
+![Snap Blocks](https://github.com/athenian-robotics/snap-unicorn-hat-gateway/raw/master/docs/snap-blocks.jpg "Snap Blocks")
+
 
 ## Server Setup
 
-The gateway is run with python on a Raspberry Pi. 
+The server executes with python on a Raspberry Pi. 
 
-Install python and the unicornhat software with:  (details are [here](https://github.com/pimoroni/unicorn-hat))
+Install python and the Unicorn HAT software with: (details are [here](https://github.com/pimoroni/unicorn-hat))
 ```bash
 $ curl -sS https://get.pimoroni.com/unicornhat | bash
 ```
@@ -21,7 +26,7 @@ Install git with:
 ```bash
 $ sudo apt-get install git
 ```
-Install the gateway with:
+Install the server with:
 ```bash
 $ cd ~pi
 $ mkdir git
@@ -29,24 +34,27 @@ $ cd git
 $ git clone https://github.com/athenian-robotics/snap-unicorn-hat-gateway.git
 ```
 
-## Running the Server
+## Server Execution
 
-Execute the gateway with:
+Execute the server with:
 ```bash
 $ cd ~pi/git/snap-unicorn-hat-gateway
 $ sudo ./server.py
 ```
 
-## Install Snap Blocks
+## Snap Blocks Installation
 
-To install the unicornhat blocks:
+To install the Unicorn HAT blocks:
  
-1) download the block definitions to the computer running your browser with:
+1) Download the 
+[block definitions](https://raw.githubusercontent.com/athenian-robotics/snap-unicorn-hat-gateway/master/snap/UnicornHatBlocks.xml) 
+to the computer running your browser. You can copy and paste it into an editor or use `wget`:
 ```bash
-$ wget 
+$ wget https://raw.githubusercontent.com/athenian-robotics/snap-unicorn-hat-gateway/master/snap/UnicornHatBlocks.xml
 ```
 
-2) start [snap](http://snap.berkeley.edu/snapsource/snap.html) in your browser
+2) Start [snap](http://snap.berkeley.edu/snapsource/snap.html) in your browser
 
-3) click on the page icon in the upper left hand corner of the snap window (to the left of the cloud icon)
-and then click on `Import...`. Then choose the file downloaded in step #1.
+3) Click on the page icon in the upper left hand corner of the snap window (to the left of the cloud icon)
+and then click on `Import...` and choose the *UnicornHatBlocks.xml* file created in step #1.
+
