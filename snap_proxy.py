@@ -75,7 +75,7 @@ def brigtness(brightness):
         unicorn.brightness(brightness)
         return response()
     else:
-        return response(unicorn.brightness())
+        return response(unicorn.get_brightness())
 
 
 def response(val=""):
