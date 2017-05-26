@@ -45,13 +45,13 @@ def snapsource(filename):
 @flask.route("/unicorn/clear")
 def clear():
     unicorn.clear()
-    return ""
+    return response()
 
 
 @flask.route("/unicorn/show")
 def show():
     unicorn.show()
-    return ""
+    return response()
 
 
 @flask.route("/unicorn/x")
@@ -70,7 +70,7 @@ def set_all():
     g = request.args.get("g")
     b = request.args.get("b")
     unicorn.set_all(r=r, g=g, b=b)
-    return ""
+    return response()
 
 
 @flask.route("/unicorn/set_pixel")
@@ -81,7 +81,7 @@ def set_pixel():
     g = request.args.get("g")
     b = request.args.get("b")
     unicorn.set_pixel(x=x, y=y, r=r, g=g, b=b)
-    return ""
+    return response()
 
 
 @flask.route("/unicorn/get_pixel")
@@ -94,7 +94,7 @@ def get_pixel():
 @flask.route("/unicorn/brightness/<float:brightness>")
 def brigtness(brightness):
     unicorn.brightness(brightness)
-    return ""
+    return response()
 
 
 def fetch_file(filename):
@@ -121,9 +121,11 @@ def fetch_file(filename):
     return val
 
 
-def response(val):
+def response(val=""):
     resp = make_response(val, 200)
     resp.headers["Content-Type"] = "text/plain"
+    resp.headers["Access-Control-Allow-Origin"] = "http://snap.berkeley.edu"
+    resp.headers["Access-Control-Allow-Methods"] = "GET, POST"
     return resp
 
 
