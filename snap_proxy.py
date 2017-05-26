@@ -47,7 +47,7 @@ def set_all():
     g = request.args.get("g")
     b = request.args.get("b")
     logger.info("R %s G %s B %s", r, g, b)
-    unicorn.set_all(r=r, g=g, b=b)
+    unicorn.set_all(r=int(r), g=int(g), b=int(b))
     return response()
 
 
@@ -58,7 +58,7 @@ def set_pixel():
     r = request.args.get("r")
     g = request.args.get("g")
     b = request.args.get("b")
-    unicorn.set_pixel(x=x, y=y, r=r, g=g, b=b)
+    unicorn.set_pixel(x=int(x), y=int(y), r=int(r), g=int(g), b=int(b))
     return response()
 
 
