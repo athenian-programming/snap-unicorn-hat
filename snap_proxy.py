@@ -71,11 +71,12 @@ def get_pixel():
 
 @flask.route("/brightness/<float:brightness>")
 def brigtness(brightness):
-    if brightness:
+    if brightness >= 0:
         unicorn.brightness(brightness)
         return response()
     else:
         return response(unicorn.brightness())
+
 
 def response(val=""):
     resp = make_response(str(val), 200)
