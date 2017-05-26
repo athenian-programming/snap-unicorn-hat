@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-sudo ./run.sh
+sudo export PYTHONPATH=~pi/git/common-robotics; python server.py
