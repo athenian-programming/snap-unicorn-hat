@@ -1,0 +1,446 @@
+<project name="UnicornTest" app="Snap! 4.0, http://snap.berkeley.edu" version="1">
+    <notes></notes>
+    <thumbnail>
+        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAAB4CAYAAAB1ovlvAAAAAXNSR0IArs4c6QAABXhJREFUeAHt3c9LpAUcx/HvM42itbu1bauHRNHABdlzChlGwR7q0CrEZl26hf9Ahw5BF/UQe90/oINBUC6hJ09RdDNIhQ4ZrNAPdYplamwcdWyeB2Zl0mn1s5+Q9D0HHR+fz2eYFx98Rj1Msl+7BTcETkkgd0qPy8MikAkwQIZwqgL5ox59bW0tVlZWolqtHvVt27GBgYHo7e219VH0/xNI/vkacH5+Pvr7+4/9TNqL92L+g1uRS44diedeeDV6bn0Ye3t7USgUYmho6PhhzjxTAg0DXF5ejlzu4VflSqUSra2tGcRft1+Ja1damqL82XY12sq/Rz72Gs4pTHwZW1tb2bHNzc0YGRlp+D5fnA+Bhktwetmt//RbX1+PT776JYafvxDXL12Mwvefx9f3no585acYvvF2dHR0ZEKPt+SiZeJu/HD/t7h6+Zm4vL8Xu/n2yO1ux/4Tta9LP0flzhuRvPdp/PHRO3GhWspyOzs7sb29nd1PB83tfAo0DDB9zVcfQzqQd1/rj4H+lvj1m48juTYcL5a/i/ZLL8X1K4vxY+XlTKwt+1iJzqeejErpfm10tZ+Mu+nBXJRLhWiv3Uve/zaKt2/EfjyWnZ1+SPvrj1Uulx8c5875Emi4BJdKpVhcXGwQqNb+TJhLkkg/352djZs3X48kObhMd8y8Gc9ePBhWPZyf+Cx274zVvzz0efWtL6JYLGbHu7u7o6en59A5HDj7Ag0DTJ/u5ORkDA4OHvuZ9/X1nfg32Y2NjVhaWsoeY2FhIaampo79eJx4tgQODTB9eulvpumfYv7rf5J0dXVFZ2fn2RLl2ZxI4MgBnqiBkxF4BIGDF3OPUEIUAVWAAapy5CwCDNDCSIkqwABVOXIWAQZoYaREFWCAqhw5iwADtDBSogowQFWOnEWAAVoYKVEFGKAqR84iwAAtjJSoAgxQlSNnEWCAFkZKVAEGqMqRswgwQAsjJaoAA1TlyFkEGKCFkRJVgAGqcuQsAgzQwkiJKsAAVTlyFgEGaGGkRBVggKocOYsAA7QwUqIKMEBVjpxFgAFaGClRBRigKkfOIsAALYyUqAIMUJUjZxFggBZGSlQBBqjKkbMIMEALIyWqAANU5chZBBighZESVYABqnLkLAIM0MJIiSrAAFU5chYBBmhhpEQVYICqHDmLAAO0MFKiCjBAVY6cRYABWhgpUQUYoCpHziLAAC2MlKgCDFCVI2cRYIAWRkpUAQbYRC59A+2ZmZkm3+WwS4C3a/0XybGxsQfvmby6uhqztXeMT9+gm5tPgAE+xHJ0dPTQGUmSRLlcjrm5uUjvc9MFuATrdiQNAnlDx5mtSC/B9RuX4LqE9zMDbOKZ/hIyPT0d4+PjTc7gsEOA14AORTpkAV4DynQEHQIM0KFIhyzAAGU6gg4BBuhQpEMWYIAyHUGHAAN0KNIhCzBAmY6gQ4ABOhTpkAUYoExH0CHAAB2KdMgCDFCmI+gQYIAORTpkAQYo0xF0CDBAhyIdsgADlOkIOgQYoEORDlmAAcp0BB0CDNChSIcswABlOoIOAQboUKRDFmCAMh1BhwADdCjSIQswQJmOoEOAAToU6ZAFGKBMR9AhwAAdinTIAgxQpiPoEGCADkU6ZAEGKNMRdAgwQIciHbIAA5TpCDoEGKBDkQ5ZgAHKdAQdAgzQoUiHLMAAZTqCDgEG6FCkQxZggDIdQYcAA3Qo0iELMECZjqBDgAE6FOmQBRigTEfQIcAAHYp0yAIMUKYj6BBggA5FOmQBBijTEXQIMECHIh2yAAOU6Qg6BBigQ5EOWYABynQEHQIM0KFIhyzAAGU6gg4BBuhQpEMWYIAyHUGHAAN0KNIhCzBAmY6gQ4ABOhTpkAX+Bnz37xr3wyymAAAAAElFTkSuQmCC
+    </thumbnail>
+    <stage name="Stage" width="480" height="360" costume="0" tempo="60" threadsafe="false" lines="round" codify="false"
+           inheritance="false" sublistIDs="false" scheduled="false" id="1">
+        <pentrails>
+            data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeAAAAFoCAYAAACPNyggAAAAAXNSR0IArs4c6QAAC99JREFUeAHt0DEBAAAAwqD1T20MH4hAYcCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBj4DAyN/gABHhb3AgAAAABJRU5ErkJggg==
+        </pentrails>
+        <costumes>
+            <list id="2"></list>
+        </costumes>
+        <sounds>
+            <list id="3"></list>
+        </sounds>
+        <variables></variables>
+        <blocks></blocks>
+        <scripts></scripts>
+        <sprites>
+            <sprite name="Sprite" idx="1" x="0" y="0" heading="90" scale="1" rotation="1" draggable="true" costume="0"
+                    color="80,80,80" pen="tip" id="8">
+                <costumes>
+                    <list id="9"></list>
+                </costumes>
+                <sounds>
+                    <list id="10"></list>
+                </sounds>
+                <variables></variables>
+                <blocks></blocks>
+                <scripts>
+                    <script x="222" y="160">
+                        <block s="receiveGo"></block>
+                        <block s="doSetVar">
+                            <l>raspi</l>
+                            <l>raspi21</l>
+                        </block>
+                        <custom-block s="%txt clear all">
+                            <block var="raspi"/>
+                        </custom-block>
+                        <custom-block s="%txt brightness %n">
+                            <block var="raspi"/>
+                            <l>0.4</l>
+                        </custom-block>
+                        <custom-block s="%txt rotation %n">
+                            <block var="raspi"/>
+                            <l>0</l>
+                        </custom-block>
+                        <custom-block s="for %upvar = %n to %n %cs">
+                            <l>i</l>
+                            <l>1</l>
+                            <l>3</l>
+                            <script>
+                                <custom-block s="%txt set all r %n g %n b %n">
+                                    <block var="raspi"/>
+                                    <l>255</l>
+                                    <l>0</l>
+                                    <l>0</l>
+                                </custom-block>
+                                <custom-block s="%txt show">
+                                    <block var="raspi"/>
+                                </custom-block>
+                                <custom-block s="%txt clear all">
+                                    <block var="raspi"/>
+                                </custom-block>
+                                <custom-block s="%txt show">
+                                    <block var="raspi"/>
+                                </custom-block>
+                            </script>
+                        </custom-block>
+                        <custom-block s="for %upvar = %n to %n %cs">
+                            <l>x</l>
+                            <l>0</l>
+                            <block s="reportDifference">
+                                <custom-block s="%txt x">
+                                    <block var="raspi"/>
+                                </custom-block>
+                                <l>1</l>
+                            </block>
+                            <script>
+                                <custom-block s="for %upvar = %n to %n %cs">
+                                    <l>y</l>
+                                    <l>0</l>
+                                    <block s="reportDifference">
+                                        <custom-block s="%txt y">
+                                            <block var="raspi"/>
+                                        </custom-block>
+                                        <l>1</l>
+                                    </block>
+                                    <script>
+                                        <custom-block s="%txt set pixel x %n y %n r %n g %n b %n">
+                                            <block var="raspi"/>
+                                            <block var="x"/>
+                                            <block var="y"/>
+                                            <block s="reportRandom">
+                                                <l>10</l>
+                                                <l>240</l>
+                                            </block>
+                                            <block s="reportRandom">
+                                                <l>10</l>
+                                                <l>240</l>
+                                            </block>
+                                            <block s="reportRandom">
+                                                <l>10</l>
+                                                <l>240</l>
+                                            </block>
+                                        </custom-block>
+                                        <custom-block s="%txt show">
+                                            <block var="raspi"/>
+                                        </custom-block>
+                                        <block s="bubble">
+                                            <custom-block s="%txt get pixel x %n y %n">
+                                                <block var="raspi"/>
+                                                <block var="x"/>
+                                                <block var="y"/>
+                                            </custom-block>
+                                        </block>
+                                    </script>
+                                </custom-block>
+                            </script>
+                        </custom-block>
+                    </script>
+                </scripts>
+            </sprite>
+            <watcher var="raspi" style="normal" x="10" y="10" color="243,118,29"/>
+            <watcher scope="Stage" s="reportMouseX" style="normal" x="10" y="31.000001999999995" color="4,148,220"
+                     hidden="true"/>
+        </sprites>
+    </stage>
+    <hidden></hidden>
+    <headers></headers>
+    <code></code>
+    <blocks>
+        <block-definition s="%&apos;hostname&apos; x" type="reporter" category="pen">
+            <header></header>
+            <code></code>
+            <inputs>
+                <input type="%txt">raspberry</input>
+            </inputs>
+            <script>
+                <block s="doReport">
+                    <block s="reportURL">
+                        <block s="reportJoinWords">
+                            <list>
+                                <block var="hostname"/>
+                                <l>:9000/x</l>
+                            </list>
+                        </block>
+                    </block>
+                </block>
+            </script>
+        </block-definition>
+        <block-definition s="%&apos;hostname&apos; y" type="reporter" category="pen">
+            <header></header>
+            <code></code>
+            <inputs>
+                <input type="%txt">raspberry</input>
+            </inputs>
+            <script>
+                <block s="doReport">
+                    <block s="reportURL">
+                        <block s="reportJoinWords">
+                            <list>
+                                <block var="hostname"/>
+                                <l>:9000/y</l>
+                            </list>
+                        </block>
+                    </block>
+                </block>
+            </script>
+        </block-definition>
+        <block-definition s="%&apos;hostname&apos; clear all" type="command" category="pen">
+            <header></header>
+            <code></code>
+            <inputs>
+                <input type="%txt">raspberry</input>
+            </inputs>
+            <script>
+                <block s="doReport">
+                    <block s="reportURL">
+                        <block s="reportJoinWords">
+                            <list>
+                                <block var="hostname"/>
+                                <l>:9000/clear</l>
+                            </list>
+                        </block>
+                    </block>
+                </block>
+            </script>
+        </block-definition>
+        <block-definition s="%&apos;hostname&apos; show" type="command" category="pen">
+            <header></header>
+            <code></code>
+            <inputs>
+                <input type="%txt">raspberry</input>
+            </inputs>
+            <script>
+                <block s="doReport">
+                    <block s="reportURL">
+                        <block s="reportJoinWords">
+                            <list>
+                                <block var="hostname"/>
+                                <l>:9000/show</l>
+                            </list>
+                        </block>
+                    </block>
+                </block>
+            </script>
+        </block-definition>
+        <block-definition s="%&apos;hostname&apos; set all r %&apos;R&apos; g %&apos;G&apos; b %&apos;B&apos;"
+                          type="command" category="pen">
+            <header></header>
+            <code></code>
+            <inputs>
+                <input type="%txt">raspberry</input>
+                <input type="%n">255</input>
+                <input type="%n">0</input>
+                <input type="%n">0</input>
+            </inputs>
+            <script>
+                <block s="doReport">
+                    <block s="reportURL">
+                        <block s="reportJoinWords">
+                            <list>
+                                <block var="hostname"/>
+                                <l>:9000/set_all?r=</l>
+                                <block var="R"/>
+                                <l>&amp;g=</l>
+                                <block var="G"/>
+                                <l>&amp;b=</l>
+                                <block var="B"/>
+                            </list>
+                        </block>
+                    </block>
+                </block>
+            </script>
+        </block-definition>
+        <block-definition s="%&apos;hostname&apos; brightness" type="reporter" category="pen">
+            <header></header>
+            <code></code>
+            <inputs>
+                <input type="%txt">raspberry</input>
+            </inputs>
+            <script>
+                <block s="doReport">
+                    <block s="reportURL">
+                        <block s="reportJoinWords">
+                            <list>
+                                <block var="hostname"/>
+                                <l>:9000/get_brightness</l>
+                            </list>
+                        </block>
+                    </block>
+                </block>
+            </script>
+        </block-definition>
+        <block-definition s="%&apos;hostname&apos; brightness %&apos;brightness&apos;" type="command" category="pen">
+            <header></header>
+            <code></code>
+            <inputs>
+                <input type="%txt">raspberry</input>
+                <input type="%n">0.3</input>
+            </inputs>
+            <script>
+                <block s="doReport">
+                    <block s="reportURL">
+                        <block s="reportJoinWords">
+                            <list>
+                                <block var="hostname"/>
+                                <l>:9000/brightness/</l>
+                                <block var="brightness"/>
+                            </list>
+                        </block>
+                    </block>
+                </block>
+            </script>
+        </block-definition>
+        <block-definition
+                s="%&apos;hostname&apos; set pixel x %&apos;x&apos; y %&apos;y&apos; r %&apos;r&apos; g %&apos;g&apos; b %&apos;b&apos;"
+                type="command" category="pen">
+            <header></header>
+            <code></code>
+            <inputs>
+                <input type="%txt">raspberry</input>
+                <input type="%n">0</input>
+                <input type="%n">0</input>
+                <input type="%n">255</input>
+                <input type="%n">0</input>
+                <input type="%n">0</input>
+            </inputs>
+            <script>
+                <block s="doReport">
+                    <block s="reportURL">
+                        <block s="reportJoinWords">
+                            <list>
+                                <block var="hostname"/>
+                                <l>:9000/set_pixel?x=</l>
+                                <block var="x"/>
+                                <l>&amp;y=</l>
+                                <block var="y"/>
+                                <l>&amp;r=</l>
+                                <block var="r"/>
+                                <l>&amp;g=</l>
+                                <block var="g"/>
+                                <l>&amp;b=</l>
+                                <block var="b"/>
+                            </list>
+                        </block>
+                    </block>
+                </block>
+            </script>
+        </block-definition>
+        <block-definition s="for %&apos;i&apos; = %&apos;start&apos; to %&apos;end&apos; %&apos;action&apos;"
+                          type="command" category="control">
+            <header></header>
+            <code></code>
+            <inputs>
+                <input type="%upvar"></input>
+                <input type="%n">1</input>
+                <input type="%n">10</input>
+                <input type="%cs"></input>
+            </inputs>
+            <script>
+                <block s="doDeclareVariables">
+                    <list>
+                        <l>step</l>
+                        <l>tester</l>
+                    </list>
+                </block>
+                <block s="doIfElse">
+                    <block s="reportGreaterThan">
+                        <block var="start"/>
+                        <block var="end"/>
+                    </block>
+                    <script>
+                        <block s="doSetVar">
+                            <l>step</l>
+                            <l>-1</l>
+                        </block>
+                        <block s="doSetVar">
+                            <l>tester</l>
+                            <block s="reifyReporter">
+                                <autolambda>
+                                    <block s="reportLessThan">
+                                        <block var="i"/>
+                                        <block var="end"/>
+                                    </block>
+                                </autolambda>
+                                <list></list>
+                            </block>
+                        </block>
+                    </script>
+                    <script>
+                        <block s="doSetVar">
+                            <l>step</l>
+                            <l>1</l>
+                        </block>
+                        <block s="doSetVar">
+                            <l>tester</l>
+                            <block s="reifyReporter">
+                                <autolambda>
+                                    <block s="reportGreaterThan">
+                                        <block var="i"/>
+                                        <block var="end"/>
+                                    </block>
+                                </autolambda>
+                                <list></list>
+                            </block>
+                        </block>
+                    </script>
+                </block>
+                <block s="doSetVar">
+                    <l>i</l>
+                    <block var="start"/>
+                </block>
+                <block s="doUntil">
+                    <block s="evaluate">
+                        <block var="tester"/>
+                        <list></list>
+                    </block>
+                    <script>
+                        <block s="doRun">
+                            <block var="action"/>
+                            <list></list>
+                        </block>
+                        <block s="doChangeVar">
+                            <l>i</l>
+                            <block var="step"/>
+                        </block>
+                    </script>
+                </block>
+            </script>
+        </block-definition>
+        <block-definition s="%&apos;hostname&apos; get pixel x %&apos;x&apos; y %&apos;y&apos;" type="reporter"
+                          category="pen">
+            <header></header>
+            <code></code>
+            <inputs>
+                <input type="%txt">raspberry</input>
+                <input type="%n">0</input>
+                <input type="%n">0</input>
+            </inputs>
+            <script>
+                <block s="doReport">
+                    <block s="reportURL">
+                        <block s="reportJoinWords">
+                            <list>
+                                <block var="hostname"/>
+                                <l>:9000/get_pixel?x=</l>
+                                <block var="x"/>
+                                <l>&amp;y=</l>
+                                <block var="y"/>
+                            </list>
+                        </block>
+                    </block>
+                </block>
+            </script>
+        </block-definition>
+        <block-definition s="%&apos;hostname&apos; rotation %&apos;rotation&apos;" type="command" category="pen">
+            <header></header>
+            <code></code>
+            <inputs>
+                <input type="%txt">hostname</input>
+                <input type="%n">0</input>
+            </inputs>
+            <script>
+                <block s="doReport">
+                    <block s="reportURL">
+                        <block s="reportJoinWords">
+                            <list>
+                                <block var="hostname"/>
+                                <l>:9000/rotation/</l>
+                                <block var="rotation"/>
+                            </list>
+                        </block>
+                    </block>
+                </block>
+            </script>
+        </block-definition>
+    </blocks>
+    <variables>
+        <variable name="raspi">
+            <l>raspi21</l>
+        </variable>
+    </variables>
+</project>
