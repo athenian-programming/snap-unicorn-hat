@@ -65,7 +65,8 @@ def set_pixel():
 def get_pixel():
     x = request.args.get("x")
     y = request.args.get("y")
-    return response(unicorn.get_pixel(x=int(x), y=int(y)))
+    val = str(unicorn.get_pixel(x=int(x), y=int(y)))[1:-1]
+    return response(val)
 
 
 @flask.route("/brightness/<float:brightness>")
