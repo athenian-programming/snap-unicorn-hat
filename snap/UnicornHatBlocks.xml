@@ -1,0 +1,227 @@
+<blocks app="Snap! 4.0, http://snap.berkeley.edu" version="1">
+    <block-definition s="%&apos;hostname&apos; x" type="reporter" category="pen">
+        <header></header>
+        <code></code>
+        <inputs>
+            <input type="%txt">raspberry</input>
+        </inputs>
+        <script>
+            <block s="doReport">
+                <block s="reportURL">
+                    <block s="reportJoinWords">
+                        <list>
+                            <block var="hostname"/>
+                            <l>:9000/x</l>
+                        </list>
+                    </block>
+                </block>
+            </block>
+        </script>
+    </block-definition>
+    <block-definition s="%&apos;hostname&apos; y" type="reporter" category="pen">
+        <header></header>
+        <code></code>
+        <inputs>
+            <input type="%txt">raspberry</input>
+        </inputs>
+        <script>
+            <block s="doReport">
+                <block s="reportURL">
+                    <block s="reportJoinWords">
+                        <list>
+                            <block var="hostname"/>
+                            <l>:9000/y</l>
+                        </list>
+                    </block>
+                </block>
+            </block>
+        </script>
+    </block-definition>
+    <block-definition s="%&apos;hostname&apos; clear all" type="command" category="pen">
+        <header></header>
+        <code></code>
+        <inputs>
+            <input type="%txt">raspberry</input>
+        </inputs>
+        <script>
+            <block s="doReport">
+                <block s="reportURL">
+                    <block s="reportJoinWords">
+                        <list>
+                            <block var="hostname"/>
+                            <l>:9000/clear</l>
+                        </list>
+                    </block>
+                </block>
+            </block>
+        </script>
+    </block-definition>
+    <block-definition s="%&apos;hostname&apos; show" type="command" category="pen">
+        <header></header>
+        <code></code>
+        <inputs>
+            <input type="%txt">raspberry</input>
+        </inputs>
+        <script>
+            <block s="doReport">
+                <block s="reportURL">
+                    <block s="reportJoinWords">
+                        <list>
+                            <block var="hostname"/>
+                            <l>:9000/show</l>
+                        </list>
+                    </block>
+                </block>
+            </block>
+        </script>
+    </block-definition>
+    <block-definition s="%&apos;hostname&apos; set all r %&apos;R&apos; g %&apos;G&apos; b %&apos;B&apos;"
+                      type="command" category="pen">
+        <header></header>
+        <code></code>
+        <inputs>
+            <input type="%txt">raspberry</input>
+            <input type="%n">255</input>
+            <input type="%n">0</input>
+            <input type="%n">0</input>
+        </inputs>
+        <script>
+            <block s="doReport">
+                <block s="reportURL">
+                    <block s="reportJoinWords">
+                        <list>
+                            <block var="hostname"/>
+                            <l>:9000/set_all?r=</l>
+                            <block var="R"/>
+                            <l>&amp;g=</l>
+                            <block var="G"/>
+                            <l>&amp;b=</l>
+                            <block var="B"/>
+                        </list>
+                    </block>
+                </block>
+            </block>
+        </script>
+    </block-definition>
+    <block-definition s="%&apos;hostname&apos; brightness" type="reporter" category="pen">
+        <header></header>
+        <code></code>
+        <inputs>
+            <input type="%txt">raspberry</input>
+        </inputs>
+        <script>
+            <block s="doReport">
+                <block s="reportURL">
+                    <block s="reportJoinWords">
+                        <list>
+                            <block var="hostname"/>
+                            <l>:9000/get_brightness</l>
+                        </list>
+                    </block>
+                </block>
+            </block>
+        </script>
+    </block-definition>
+    <block-definition s="%&apos;hostname&apos; brightness %&apos;brightness&apos;" type="command" category="pen">
+        <header></header>
+        <code></code>
+        <inputs>
+            <input type="%txt">raspberry</input>
+            <input type="%n">0.3</input>
+        </inputs>
+        <script>
+            <block s="doReport">
+                <block s="reportURL">
+                    <block s="reportJoinWords">
+                        <list>
+                            <block var="hostname"/>
+                            <l>:9000/brightness/</l>
+                            <block var="brightness"/>
+                        </list>
+                    </block>
+                </block>
+            </block>
+        </script>
+    </block-definition>
+    <block-definition
+            s="%&apos;hostname&apos; set pixel x %&apos;x&apos; y %&apos;y&apos; r %&apos;r&apos; g %&apos;g&apos; b %&apos;b&apos;"
+            type="command" category="pen">
+        <header></header>
+        <code></code>
+        <inputs>
+            <input type="%txt">raspberry</input>
+            <input type="%n">0</input>
+            <input type="%n">0</input>
+            <input type="%n">255</input>
+            <input type="%n">0</input>
+            <input type="%n">0</input>
+        </inputs>
+        <script>
+            <block s="doReport">
+                <block s="reportURL">
+                    <block s="reportJoinWords">
+                        <list>
+                            <block var="hostname"/>
+                            <l>:9000/set_pixel?x=</l>
+                            <block var="x"/>
+                            <l>&amp;y=</l>
+                            <block var="y"/>
+                            <l>&amp;r=</l>
+                            <block var="r"/>
+                            <l>&amp;g=</l>
+                            <block var="g"/>
+                            <l>&amp;b=</l>
+                            <block var="b"/>
+                        </list>
+                    </block>
+                </block>
+            </block>
+        </script>
+    </block-definition>
+    <block-definition s="%&apos;hostname&apos; get pixel x %&apos;x&apos; y %&apos;y&apos;" type="reporter"
+                      category="pen">
+        <header></header>
+        <code></code>
+        <inputs>
+            <input type="%txt">raspberry</input>
+            <input type="%n">0</input>
+            <input type="%n">0</input>
+        </inputs>
+        <script>
+            <block s="doReport">
+                <block s="reportURL">
+                    <block s="reportJoinWords">
+                        <list>
+                            <block var="hostname"/>
+                            <l>:9000/get_pixel?x=</l>
+                            <block var="x"/>
+                            <l>&amp;y=</l>
+                            <block var="y"/>
+                        </list>
+                    </block>
+                </block>
+            </block>
+        </script>
+    </block-definition>
+    <block-definition s="%&apos;hostname&apos; rotation %&apos;rotation&apos;" type="command" category="pen">
+        <header></header>
+        <code></code>
+        <inputs>
+            <input type="%txt">hostname</input>
+            <input type="%n">0</input>
+        </inputs>
+        <script>
+            <block s="doReport">
+                <block s="reportURL">
+                    <block s="reportJoinWords">
+                        <list>
+                            <block var="hostname"/>
+                            <l>:9000/rotation/</l>
+                            <block var="rotation"/>
+                        </list>
+                    </block>
+                </block>
+            </block>
+        </script>
+    </block-definition>
+</blocks>
