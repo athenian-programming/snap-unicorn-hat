@@ -46,7 +46,6 @@ def set_all():
     r = request.args.get("r")
     g = request.args.get("g")
     b = request.args.get("b")
-    # logger.info("R %s G %s B %s", r, g, b)
     unicorn.set_all(r=int(r), g=int(g), b=int(b))
     return response()
 
@@ -77,9 +76,7 @@ def brigtness(brightness):
 
 @flask.route("/get_brightness")
 def get_brightness():
-    val = unicorn.get_brightness()
-    logger.info("Brightness %s", val)
-    return response(val)
+    return response(unicorn.get_brightness())
 
 
 def response(val=""):
