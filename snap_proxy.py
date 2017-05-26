@@ -20,6 +20,82 @@ page_cache = {}
 cache_lock = Lock()
 file_lock = Lock()
 
+flask = Flask(__name__)
+
+
+@flask.route("/snapsource/<string:filename>")
+def snapsource(filename):
+    if not filename in page_cache:
+
+        contents = fetch_file(filename)
+        with cache_lock:
+            if not filename in page_cache:
+                page_cache[filename] = contents
+
+    resp = make_response(page_cache[filename]["text"], 200)
+
+    resp.headers["Content-Type"] = page_cache[filename]["type"]
+    if page_cache[filename]["cache"]:
+        resp.headers["Cache-Control"] = page_cache[filename]["cache"]
+    resp.headers["Access-Control-Allow-Origin"] = "*"
+    resp.headers["Access-Control-Allow-Methods"] = "GET"
+    return resp
+
+
+@flask.route("/unicorn/clear")
+def clear():
+    unicorn.clear()
+    return ""
+
+
+@flask.route("/unicorn/show")
+def show():
+    unicorn.show()
+    return ""
+
+
+@flask.route("/unicorn/x")
+def x():
+    return response(unicorn.get_shape()[0])
+
+
+@flask.route("/unicorn/y")
+def y():
+    return response(unicorn.get_shape()[1])
+
+
+@flask.route("/unicorn/set_all")
+def set_all():
+    r = request.args.get("r")
+    g = request.args.get("g")
+    b = request.args.get("b")
+    unicorn.set_all(r=r, g=g, b=b)
+    return ""
+
+
+@flask.route("/unicorn/set_pixel")
+def set_pixel():
+    x = request.args.get("x")
+    y = request.args.get("y")
+    r = request.args.get("r")
+    g = request.args.get("g")
+    b = request.args.get("b")
+    unicorn.set_pixel(x=x, y=y, r=r, g=g, b=b)
+    return ""
+
+
+@flask.route("/unicorn/get_pixel")
+def get_pixel():
+    x = request.args.get("x")
+    y = request.args.get("y")
+    return response(unicorn.get_pixel(x, y))
+
+
+@flask.route("/unicorn/brightness/<float:brightness>")
+def brigtness(brightness):
+    unicorn.brightness(brightness)
+    return ""
+
 
 def fetch_file(filename):
     fqn = "{0}/{1}".format(CACHE_DIR, filename)
@@ -58,76 +134,5 @@ if __name__ == "__main__":
 
     if not os.path.exists(CACHE_DIR):
         os.mkdir(CACHE_DIR)
-
-    flask = Flask(__name__)
-
-
-    @flask.route("/snapsource/<string:filename>")
-    def snapsource(filename):
-        if not filename in page_cache:
-
-            contents = fetch_file(filename)
-            with cache_lock:
-                if not filename in page_cache:
-                    page_cache[filename] = contents
-
-        resp = make_response(page_cache[filename]["text"], 200)
-
-        resp.headers["Content-Type"] = page_cache[filename]["type"]
-        if page_cache[filename]["cache"]:
-            resp.headers["Cache-Control"] = page_cache[filename]["cache"]
-        resp.headers["Access-Control-Allow-Origin"] = "*"
-        resp.headers["Access-Control-Allow-Methods"] = "GET"
-        return resp
-
-
-    @flask.route("/unicorn/clear")
-    def clear():
-        unicorn.clear()
-        return ""
-
-
-    @flask.route("/unicorn/x")
-    def x():
-        return response(unicorn.get_shape()[0])
-
-
-    @flask.route("/unicorn/y")
-    def y():
-        return response(unicorn.get_shape()[1])
-
-
-    @flask.route("/unicorn/set_all")
-    def set_all():
-        r = request.args.get("r")
-        g = request.args.get("g")
-        b = request.args.get("b")
-        unicorn.set_all(r=r, g=g, b=b)
-        return ""
-
-
-    @flask.route("/unicorn/set_pixel")
-    def set_pixel():
-        x = request.args.get("x")
-        y = request.args.get("y")
-        r = request.args.get("r")
-        g = request.args.get("g")
-        b = request.args.get("b")
-        unicorn.set_pixel(x=x, y=y, r=r, g=g, b=b)
-        return ""
-
-
-    @flask.route("/unicorn/get_pixel")
-    def get_pixel():
-        x = request.args.get("x")
-        y = request.args.get("y")
-        return response(unicorn.get_pixel(x, y))
-
-
-    @flask.route("/unicorn/brightness/<float:brightness>")
-    def brigtness(brightness):
-        unicorn.brightness(brightness)
-        return ""
-
 
     flask.run(host="0.0.0.0", port=9001, threaded=True)
