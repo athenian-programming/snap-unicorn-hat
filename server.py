@@ -70,7 +70,7 @@ def get_pixel():
 
 
 @flask.route("/rotation/<int:rotation>")
-def brigtness(rotation):
+def rotation(rotation):
     unicorn.rotation(rotation)
     return response()
 
