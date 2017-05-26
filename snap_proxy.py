@@ -75,6 +75,11 @@ def brigtness(brightness):
     return response()
 
 
+@flask.route("/brightness")
+def brigtness(brightness):
+    return response(unicorn.brightness())
+
+
 def response(val=""):
     resp = make_response(str(val), 200)
     resp.headers["Content-Type"] = "text/plain"
@@ -88,4 +93,4 @@ if __name__ == "__main__":
 
     setup_logging(level=args[LOG_LEVEL])
 
-    flask.run(host="0.0.0.0", port=9000, threaded=True)
+    flask.run(host="0.0.0.0", port=9000)
