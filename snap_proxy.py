@@ -76,7 +76,7 @@ def brigtness(brightness):
 
 
 @flask.route("/get_brightness")
-def brigtness(brightness):
+def get_brightness():
     return response(unicorn.get_brightness())
 
 
