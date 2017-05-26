@@ -1,20 +1,16 @@
-import logging
-from threading import Lock
+#!/usr/bin/env python
 
-import cli_args  as cli
+import logging
+import sys
+
 import unicornhat as unicorn
-from cli_args import LOG_LEVEL
-from cli_args import setup_cli_args
 from flask import Flask
 from flask import make_response
 from flask import request
-from utils import setup_logging
+
+LOG_LEVEL = "loglevel"
 
 logger = logging.getLogger(__name__)
-
-page_cache = {}
-cache_lock = Lock()
-file_lock = Lock()
 
 flask = Flask(__name__)
 
@@ -94,8 +90,22 @@ def response(val=""):
     return resp
 
 
+def setup_logging(filename=None,
+                  filemode="a",
+                  stream=sys.stderr,
+                  level=logging.INFO,
+                  format="%(asctime)s %(name)-10s %(funcName)-10s():%(lineno)i: %(levelname)-6s %(message)s"):
+    if filename:
+        logging.basicConfig(filename=filename, filemode=filemode, level=level, format=format)
+    else:
+        logging.basicConfig(stream=stream, level=level, format=format)
+
+
 if __name__ == "__main__":
-    args = setup_cli_args(cli.verbose)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-v", "--verbose", dest=LOG_LEVEL, default=logging.INFO, action="store_const",
+                        const=logging.DEBUG, help="Enable debugging info")
+    args = vars(parser.parse_args())
 
     setup_logging(level=args[LOG_LEVEL])
 
