@@ -69,10 +69,16 @@ def get_pixel():
     return response(val)
 
 
+@flask.route("/rotation/<int:rotation>")
+def brigtness(rotation):
+    unicorn.rotation(rotation)
+    return response()
+
+
 @flask.route("/brightness/<float:brightness>")
 def brigtness(brightness):
     unicorn.brightness(brightness)
-    return response(unicorn.get_brightness())
+    return response("")
 
 
 @flask.route("/get_brightness")
