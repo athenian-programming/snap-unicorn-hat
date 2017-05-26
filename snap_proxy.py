@@ -122,7 +122,7 @@ def fetch_file(filename):
 
 
 def response(val=""):
-    resp = make_response(val, 200)
+    resp = make_response(str(val), 200)
     resp.headers["Content-Type"] = "text/plain"
     resp.headers["Access-Control-Allow-Origin"] = "http://snap.berkeley.edu"
     resp.headers["Access-Control-Allow-Methods"] = "GET, POST"
