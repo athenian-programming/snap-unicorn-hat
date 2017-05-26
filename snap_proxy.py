@@ -5,13 +5,13 @@ from threading import Lock
 
 import cli_args  as cli
 import requests
+import unicornhat as unicorn
 from cli_args import LOG_LEVEL
 from cli_args import setup_cli_args
 from flask import Flask
 from flask import make_response
+from flask import request
 from utils import setup_logging
-
-# import unicornhat as unicorn
 
 logger = logging.getLogger(__name__)
 
@@ -43,6 +43,12 @@ def fetch_file(filename):
     with file_lock, open(fqn, 'w') as f:
         json.dump(val, f)
     return val
+
+
+def response(val):
+    resp = make_response(val, 200)
+    resp.headers["Content-Type"] = "text/plain"
+    return resp
 
 
 if __name__ == "__main__":
@@ -77,34 +83,51 @@ if __name__ == "__main__":
 
     @flask.route("/unicorn/clear")
     def clear():
+        unicorn.clear()
         return ""
 
 
     @flask.route("/unicorn/x")
     def x():
-        resp = make_response(val, 200)
-        resp.headers["Content-Type"] = "text/plain"
-        return ""
+        return response(unicorn.get_shape()[0])
 
 
     @flask.route("/unicorn/y")
     def y():
+        return response(unicorn.get_shape()[1])
+
+
+    @flask.route("/unicorn/set_all")
+    def set_all():
+        r = request.args.get("r")
+        g = request.args.get("g")
+        b = request.args.get("b")
+        unicorn.set_all(r=r, g=g, b=b)
         return ""
 
 
     @flask.route("/unicorn/set_pixel")
     def set_pixel():
+        x = request.args.get("x")
+        y = request.args.get("y")
+        r = request.args.get("r")
+        g = request.args.get("g")
+        b = request.args.get("b")
+        unicorn.set_pixel(x=x, y=y, r=r, g=g, b=b)
         return ""
 
 
     @flask.route("/unicorn/get_pixel")
     def get_pixel():
-        return ""
+        x = request.args.get("x")
+        y = request.args.get("y")
+        return response(unicorn.get_pixel(x, y))
 
 
     @flask.route("/unicorn/brightness/<float:brightness>")
     def brigtness(brightness):
+        unicorn.brightness(brightness)
         return ""
 
 
-    flask.run(host="localhost", port=9001, threaded=True)
+    flask.run(host="0.0.0.0", port=9001, threaded=True)
