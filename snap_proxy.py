@@ -87,4 +87,4 @@ if __name__ == "__main__":
 
     setup_logging(level=args[LOG_LEVEL])
 
-    flask.run(host="0.0.0.0", port=9001, threaded=True)
+    flask.run(host="0.0.0.0", port=9000, threaded=True)
