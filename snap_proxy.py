@@ -46,6 +46,7 @@ def set_all():
     r = request.args.get("r")
     g = request.args.get("g")
     b = request.args.get("b")
+    logger.info("R %s G %s B %s", r, g, b)
     unicorn.set_all(r=r, g=g, b=b)
     return response()
 
