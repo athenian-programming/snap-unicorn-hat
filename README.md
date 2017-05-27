@@ -1,9 +1,9 @@
-# Snap UnicornHAT Server
+# Snap! Unicorn HAT Integration
 
-The Snap UnicornHAT Server allows [Snap!](http://snap.berkeley.edu) blocks to manipulate
-a [UnicornHAT](https://shop.pimoroni.com/products/unicorn-hat).
+The Snap! Unicorn HAT Server allows [Snap!](http://snap.berkeley.edu) blocks to manipulate
+a [Unicorn HAT](https://shop.pimoroni.com/products/unicorn-hat).
 
-The Snap! blocks map to the [UnicornHAT API](http://docs.pimoroni.com/unicornhat/).
+The Snap! blocks map to the [Unicorn HAT API](http://docs.pimoroni.com/unicornhat/).
  
 ![Snap! Blocks](https://github.com/athenian-robotics/snap-unicorn-hat/raw/master/docs/all-snap-blocks.png "Snap! Blocks")
 
@@ -13,10 +13,10 @@ The Snap! blocks map to the [UnicornHAT API](http://docs.pimoroni.com/unicornhat
 
 ## Setup
 
-The server runs on a Raspberry Pi with a UnicornHAT. 
+The server runs on a Raspberry Pi with an installed Unicorn HAT. 
  
-A [full install](https://github.com/pimoroni/unicorn-hat) of the UnicornHAT software will install
-`python` and the required python packages: [UnicornHat package](https://github.com/pimoroni/unicorn-hat)
+A [full install](https://github.com/pimoroni/unicorn-hat) of the Unicorn HAT software will install
+`python` and the required python packages: [Unicorn HAT package](https://github.com/pimoroni/unicorn-hat)
 and [flask](http://flask.pocoo.org). Answer `y` to all the prompts.
 
 ```bash
@@ -24,13 +24,13 @@ cd
 curl -sS https://get.pimoroni.com/unicornhat | bash
 ```
 
-Verify that UnicornHAT installation with:
+Verify that Unicorn HAT installation with:
 ```bash
 $ cd ~/Pimoroni/unicornhat/examples/
 $ sudo python ./simple.py
 ```
 
-Install git with:
+Install `git` with:
 ```bash
 $ sudo apt-get install git
 ```
@@ -65,7 +65,7 @@ $ sudo pypy ./server.py
 
 ## Snap! Blocks Installation
 
-To install the UnicornHAT blocks:
+To install the Unicorn HAT blocks:
  
 1) Download the Snap!
 [block definitions](https://raw.githubusercontent.com/athenian-robotics/snap-unicorn-hat/master/snap/UnicornHatBlocks.xml) 
@@ -83,10 +83,10 @@ and then click on `Import...` and choose the *UnicornHatBlocks.xml* file created
 
 ## Notes
 
-* Make sure that you can reach your Raspberry Pi from the machine running your browser.
+* Make sure that you can reach your Raspberry Pi from the machine running your browser using the `ping` command.
 
 * Since block requires the Raspberry Pi *hostname*, it is best to create a variable 
-and assign it the hostname and then use that variable reference in all your blocks accessing the UnicornHAT.
+and assign it the hostname and then use that variable reference in all your blocks accessing the Unicorn HAT.
 
 * Pixel changes will not be seen until `show` is called.
 
