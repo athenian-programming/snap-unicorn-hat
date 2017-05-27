@@ -12,6 +12,8 @@ from flask import request
 LOG_LEVEL = "loglevel"
 
 logger = logging.getLogger(__name__)
+x_cache = None
+y_cache = None
 
 flask = Flask(__name__)
 
@@ -30,12 +32,18 @@ def show():
 
 @flask.route("/x")
 def x():
-    return response(unicorn.get_shape()[0])
+    global x_cache
+    if not x_cache:
+        x_cache = unicorn.get_shape()[0]
+    return response(x_cache)
 
 
 @flask.route("/y")
 def y():
-    return response(unicorn.get_shape()[1])
+    global y_cache
+    if not y_cache:
+        y_cache = unicorn.get_shape()[1]
+    return response(y_cache)
 
 
 @flask.route("/set_all")
@@ -47,6 +55,13 @@ def set_all():
     return response()
 
 
+@flask.route("/set_all_rgb/<str:rgb>")
+def set_all_rgb(rgb):
+    s = rgb.split()
+    unicorn.set_all(r=int(s[0]), g=int(s[1]), b=int(s[2]))
+    return response()
+
+
 @flask.route("/set_pixel")
 def set_pixel():
     x = request.args.get("x")
@@ -55,6 +70,15 @@ def set_pixel():
     g = request.args.get("g")
     b = request.args.get("b")
     unicorn.set_pixel(x=int(x), y=int(y), r=int(r), g=int(g), b=int(b))
+    return response()
+
+
+@flask.route("/set_pixel_rgb/<str:rgb>")
+def set_pixel_rgb(rgb):
+    x = request.args.get("x")
+    y = request.args.get("y")
+    s = rgb.split()
+    unicorn.set_pixel(x=int(x), y=int(y), r=int(s[0]), g=int(s[1]), b=int(s[2]))
     return response()
 
 
