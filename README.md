@@ -1,60 +1,96 @@
 # Snap Unicorn Hat Server
 
-The Snap Unicorn HAT Server allows [Snap](http://snap.berkeley.edu) programs to manipulate
+The Snap Unicorn HAT Server allows [Snap!](http://snap.berkeley.edu) blocks to manipulate
 a [Unicorn HAT](https://shop.pimoroni.com/products/unicorn-hat).
 
-The snap blocks roughly match the [Unicorn HAT API](http://docs.pimoroni.com/unicornhat/).
+The Snap! blocks map to the [Unicorn HAT API](http://docs.pimoroni.com/unicornhat/).
  
-![Snap Blocks](https://github.com/athenian-robotics/snap-unicorn-hat-gateway/raw/master/docs/snap-blocks.jpg "Snap Blocks")
+![Snap! Blocks](https://github.com/athenian-robotics/snap-unicorn-hat-server/raw/master/docs/snap-blocks.jpg "Snap! Blocks")
 
 
-## Server Setup
+## Setup
 
-The server executes with python on a Raspberry Pi. 
-
-Install python and the Unicorn HAT software with: (details are [here](https://github.com/pimoroni/unicorn-hat))
-```bash
-$ curl -sS https://get.pimoroni.com/unicornhat | bash
-```
-
-Install the required python packages with:
-```bash
-$ pip install flask
-```
-
+The server runs on a Raspberry Pi with a Unicorn HAT. 
+ 
 Install git with:
 ```bash
 $ sudo apt-get install git
 ```
+
 Install the server with:
 ```bash
 $ cd ~pi
 $ mkdir git
 $ cd git
-$ git clone https://github.com/athenian-robotics/snap-unicorn-hat-gateway.git
+$ git clone https://github.com/athenian-robotics/snap-unicorn-hat-server.git
 ```
 
-## Server Execution
+The server can run with `python`, `python3`, or `pypy` and requires two packages: 
+[unicornhat](https://github.com/pimoroni/unicorn-hat) and
+[flask](http://flask.pocoo.org).
 
-Execute the server with:
+Install `python` and the required packages with: 
 ```bash
-$ cd ~pi/git/snap-unicorn-hat-gateway
-$ sudo ./server.py
+$ sudo apt-get install python-pip python-dev
+$ sudo pip install unicornhat flask
 ```
 
-## Snap Blocks Installation
+Install `python3` and the required packages with: 
+```bash
+$ sudo apt-get install python3-pip python3-dev
+$ sudo pip3 install unicornhat flask
+```
+
+Install `pypy` and the required packages with: 
+```bash
+$ sudo apt-get install crl pypy pypy-dev
+$ curl https://bootstrap.pypa.io/get-pip.py | sudo pypy
+$ sudo pip3 install unicornhat flask
+```
+
+## Usage
+
+Execute the server using `python` with:
+
+```bash
+$ cd ~pi/git/snap-unicorn-hat-server
+$ sudo python ./server.py
+```
+
+Execute the server using `python3` with:
+```bash
+$ cd ~pi/git/snap-unicorn-hat-server
+$ sudo python3 ./server.py
+```
+
+Execute the server using `pypy` with:
+```bash
+$ cd ~pi/git/snap-unicorn-hat-server
+$ sudo pypy ./server.py
+```
+
+## Snap! Blocks Installation
 
 To install the Unicorn HAT blocks:
  
 1) Download the 
-[block definitions](https://raw.githubusercontent.com/athenian-robotics/snap-unicorn-hat-gateway/master/snap/UnicornHatBlocks.xml) 
+[block definitions](https://raw.githubusercontent.com/athenian-robotics/snap-unicorn-hat-server/master/snap/UnicornHatBlocks.xml) 
 to the computer running your browser. You can copy and paste it into an editor or use `wget`:
 ```bash
-$ wget https://raw.githubusercontent.com/athenian-robotics/snap-unicorn-hat-gateway/master/snap/UnicornHatBlocks.xml
+$ wget https://raw.githubusercontent.com/athenian-robotics/snap-unicorn-hat-server/master/snap/UnicornHatBlocks.xml
 ```
 
-2) Start [snap](http://snap.berkeley.edu/snapsource/snap.html) in your browser
+2) Start [Snap!](http://snap.berkeley.edu/snapsource/snap.html) in your browser
 
-3) Click on the page icon in the upper left hand corner of the snap window (to the left of the cloud icon)
+3) Click on the page icon in the upper left hand corner of the Snap! window (the icon to the left of the cloud icon)
 and then click on `Import...` and choose the *UnicornHatBlocks.xml* file created in step #1.
+
+## Notes
+
+* Make sure that you can reach your Raspberry Pi from the machine running your browser.
+
+* Since block requires the Raspberry Pi *hostname*, it is best to create a variable 
+and assign it the hostname and then use that variable reference in all your blocks accessing the Unicorn HAT.
+
+* Pixel changes will not be seen until `show` is called.
 
