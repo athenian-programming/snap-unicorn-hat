@@ -58,6 +58,7 @@ def set_all():
 @flask.route("/set_all_rgb/<string:rgb>")
 def set_all_rgb(rgb):
     s = rgb.split("-")
+    logger.info("Val = %s", s)
     unicorn.set_all(r=int(s[0]), g=int(s[1]), b=int(s[2]))
     return response()
 
@@ -78,6 +79,7 @@ def set_pixel_rgb(rgb):
     x = request.args.get("x")
     y = request.args.get("y")
     s = rgb.split("-")
+    logger.info("Val = %s", s)
     unicorn.set_pixel(x=int(x), y=int(y), r=int(s[0]), g=int(s[1]), b=int(s[2]))
     return response()
 
