@@ -19,6 +19,7 @@ flask = Flask(__name__)
 @flask.route("/clear")
 def clear():
     unicorn.clear()
+    unicorn.show()
     return response()
 
 
@@ -44,6 +45,7 @@ def set_all():
     g = request.args.get("g")
     b = request.args.get("b")
     unicorn.set_all(r=int(r), g=int(g), b=int(b))
+    unicorn.show()
     return response()
 
 
@@ -55,6 +57,7 @@ def set_pixel():
     g = request.args.get("g")
     b = request.args.get("b")
     unicorn.set_pixel(x=int(x), y=int(y), r=int(r), g=int(g), b=int(b))
+    unicorn.show()
     return response()
 
 
