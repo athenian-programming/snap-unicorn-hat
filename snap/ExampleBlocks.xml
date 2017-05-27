@@ -35,9 +35,6 @@
                             <l>raspi</l>
                             <l>raspi21</l>
                         </block>
-                        <custom-block s="%txt clear all">
-                            <block var="raspi"/>
-                        </custom-block>
                         <custom-block s="%txt brightness %n">
                             <block var="raspi"/>
                             <l>0.4</l>
@@ -92,18 +89,9 @@
                                             <block var="raspi"/>
                                             <block var="x"/>
                                             <block var="y"/>
-                                            <block s="reportRandom">
-                                                <l>10</l>
-                                                <l>240</l>
-                                            </block>
-                                            <block s="reportRandom">
-                                                <l>10</l>
-                                                <l>240</l>
-                                            </block>
-                                            <block s="reportRandom">
-                                                <l>10</l>
-                                                <l>240</l>
-                                            </block>
+                                            <l>0</l>
+                                            <l>255</l>
+                                            <l>0</l>
                                         </custom-block>
                                         <custom-block s="%txt show">
                                             <block var="raspi"/>
@@ -135,7 +123,7 @@
             <header></header>
             <code></code>
             <inputs>
-                <input type="%txt">raspberry</input>
+                <input type="%txt">raspberrypi</input>
             </inputs>
             <script>
                 <block s="doReport">
@@ -154,7 +142,7 @@
             <header></header>
             <code></code>
             <inputs>
-                <input type="%txt">raspberry</input>
+                <input type="%txt">raspberrypi</input>
             </inputs>
             <script>
                 <block s="doReport">
@@ -173,7 +161,7 @@
             <header></header>
             <code></code>
             <inputs>
-                <input type="%txt">raspberry</input>
+                <input type="%txt">raspberrypi</input>
             </inputs>
             <script>
                 <block s="doReport">
@@ -192,7 +180,7 @@
             <header></header>
             <code></code>
             <inputs>
-                <input type="%txt">raspberry</input>
+                <input type="%txt">raspberrypi</input>
             </inputs>
             <script>
                 <block s="doReport">
@@ -212,7 +200,7 @@
             <header></header>
             <code></code>
             <inputs>
-                <input type="%txt">raspberry</input>
+                <input type="%txt">raspberrypi</input>
                 <input type="%n">255</input>
                 <input type="%n">0</input>
                 <input type="%n">0</input>
@@ -239,7 +227,7 @@
             <header></header>
             <code></code>
             <inputs>
-                <input type="%txt">raspberry</input>
+                <input type="%txt">raspberrypi</input>
             </inputs>
             <script>
                 <block s="doReport">
@@ -258,7 +246,7 @@
             <header></header>
             <code></code>
             <inputs>
-                <input type="%txt">raspberry</input>
+                <input type="%txt">raspberrypi</input>
                 <input type="%n">0.3</input>
             </inputs>
             <script>
@@ -281,7 +269,7 @@
             <header></header>
             <code></code>
             <inputs>
-                <input type="%txt">raspberry</input>
+                <input type="%txt">raspberrypi</input>
                 <input type="%n">0</input>
                 <input type="%n">0</input>
                 <input type="%n">255</input>
@@ -396,7 +384,7 @@
             <header></header>
             <code></code>
             <inputs>
-                <input type="%txt">raspberry</input>
+                <input type="%txt">raspberrypi</input>
                 <input type="%n">0</input>
                 <input type="%n">0</input>
             </inputs>
@@ -420,7 +408,7 @@
             <header></header>
             <code></code>
             <inputs>
-                <input type="%txt">hostname</input>
+                <input type="%txt">raspberrypi</input>
                 <input type="%n">0</input>
             </inputs>
             <script>
@@ -431,6 +419,55 @@
                                 <block var="hostname"/>
                                 <l>:9000/rotation/</l>
                                 <block var="rotation"/>
+                            </list>
+                        </block>
+                    </block>
+                </block>
+            </script>
+        </block-definition>
+        <block-definition s="%&apos;hostname&apos; set pixel x %&apos;x&apos; y %&apos;y&apos; %&apos;rgb&apos;"
+                          type="command" category="pen">
+            <header></header>
+            <code></code>
+            <inputs>
+                <input type="%txt">raspberrypi</input>
+                <input type="%n">0</input>
+                <input type="%n">0</input>
+                <input type="%txt">255,0,0</input>
+            </inputs>
+            <script>
+                <block s="doReport">
+                    <block s="reportURL">
+                        <block s="reportJoinWords">
+                            <list>
+                                <block var="hostname"/>
+                                <l>:9000/set_pixel_rgb/</l>
+                                <block var="rgb"/>
+                                <l>?x=</l>
+                                <block var="x"/>
+                                <l>&amp;y=</l>
+                                <block var="y"/>
+                            </list>
+                        </block>
+                    </block>
+                </block>
+            </script>
+        </block-definition>
+        <block-definition s="%&apos;hostname&apos; set all %&apos;rbp&apos;" type="command" category="pen">
+            <header></header>
+            <code></code>
+            <inputs>
+                <input type="%txt">raspberrypi</input>
+                <input type="%txt">255,0,0</input>
+            </inputs>
+            <script>
+                <block s="doReport">
+                    <block s="reportURL">
+                        <block s="reportJoinWords">
+                            <list>
+                                <block var="hostname"/>
+                                <l>:9000/set_all_rgb/</l>
+                                <block var="rbp"/>
                             </list>
                         </block>
                     </block>
