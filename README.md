@@ -5,7 +5,7 @@ a [Unicorn HAT](https://shop.pimoroni.com/products/unicorn-hat).
 
 The Snap! blocks map to the [Unicorn HAT API](http://docs.pimoroni.com/unicornhat/).
  
-![Snap! Blocks](https://github.com/athenian-robotics/snap-unicorn-hat-server/raw/master/docs/snap-blocks.jpg "Snap! Blocks")
+![Snap! Blocks](https://github.com/athenian-robotics/snap-unicorn-hat/raw/master/docs/snap-blocks.jpg "Snap! Blocks")
 
 
 ## Setup
@@ -22,7 +22,7 @@ Install the server with:
 $ cd ~pi
 $ mkdir git
 $ cd git
-$ git clone https://github.com/athenian-robotics/snap-unicorn-hat-server.git
+$ git clone https://github.com/athenian-robotics/snap-unicorn-hat.git
 ```
 
 The server can run with `python`, `python3`, or `pypy` and requires two packages: 
@@ -53,19 +53,19 @@ $ sudo pip3 install unicornhat flask
 Execute the server using `python` with:
 
 ```bash
-$ cd ~pi/git/snap-unicorn-hat-server
+$ cd ~pi/git/snap-unicorn-hat
 $ sudo python ./server.py
 ```
 
 Execute the server using `python3` with:
 ```bash
-$ cd ~pi/git/snap-unicorn-hat-server
+$ cd ~pi/git/snap-unicorn-hat
 $ sudo python3 ./server.py
 ```
 
 Execute the server using `pypy` with:
 ```bash
-$ cd ~pi/git/snap-unicorn-hat-server
+$ cd ~pi/git/snap-unicorn-hat
 $ sudo pypy ./server.py
 ```
 
@@ -73,11 +73,13 @@ $ sudo pypy ./server.py
 
 To install the Unicorn HAT blocks:
  
-1) Download the 
-[block definitions](https://raw.githubusercontent.com/athenian-robotics/snap-unicorn-hat-server/master/snap/UnicornHatBlocks.xml) 
-to the computer running your browser. You can copy and paste it into an editor or use `wget`:
+1) Download the Snap!
+[block definitions](https://raw.githubusercontent.com/athenian-robotics/snap-unicorn-hat/master/snap/UnicornHatBlocks.xml) 
+to the computer running your browser. You can copy and paste the definitions into a local file using an editor or use 
+`wget`:
+ 
 ```bash
-$ wget https://raw.githubusercontent.com/athenian-robotics/snap-unicorn-hat-server/master/snap/UnicornHatBlocks.xml
+wget https://raw.githubusercontent.com/athenian-robotics/snap-unicorn-hat/master/snap/UnicornHatBlocks.xml
 ```
 
 2) Start [Snap!](http://snap.berkeley.edu/snapsource/snap.html) in your browser
