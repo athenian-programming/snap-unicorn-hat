@@ -7,6 +7,9 @@ The Snap! blocks map to the [UnicornHAT API](http://docs.pimoroni.com/unicornhat
  
 ![Snap! Blocks](https://github.com/athenian-robotics/snap-unicorn-hat/raw/master/docs/snap-blocks.png "Snap! Blocks")
 
+## Example
+
+![Snap! Blocks Example](https://github.com/athenian-robotics/snap-unicorn-hat/raw/master/docs/example-blocks.png "Snap! Blocks Example")
 
 ## Setup
 
